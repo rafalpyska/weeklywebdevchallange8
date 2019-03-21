@@ -36,7 +36,8 @@ pre {
   /* 2 */ }
 
 a {
-  background-color: transparent; }
+  background-color: transparent;
+  text-decoration: none; }
 
 abbr[title] {
   border-bottom: none;
@@ -237,7 +238,9 @@ body {
     width: 2.4rem;
     height: 2.1rem;
     margin: 0 2.5rem;
-    cursor: pointer; }
+    transition: .2s all; }
+    .social__icon:hover {
+      fill: var(--red); }
 
 .logo {
   font-size: 2.4rem;
@@ -245,7 +248,14 @@ body {
   padding: .65rem 1rem;
   border: 1px solid var(--red);
   border-radius: 1.5rem;
-  border-top-right-radius: 0; }
+  border-top-right-radius: 0;
+  transition: .2s all; }
+  .logo a:link,
+  .logo a:visited {
+    color: var(--black); }
+  .logo:hover {
+    color: var(--white);
+    background-color: var(--red); }
 
 .navigation {
   display: flex;
@@ -262,7 +272,8 @@ body {
     margin-right: 2.2rem;
     border: 0;
     border-top: 1px solid var(--white);
-    background: transparent; }
+    background: transparent;
+    cursor: pointer; }
     .navigation__toggle:before, .navigation__toggle:after {
       content: '';
       position: absolute;
@@ -277,6 +288,7 @@ body {
       transform: translateY(23px); }
 
 .hero {
+  position: relative;
   background: url("../images/hero.jpg");
   background-size: cover;
   height: 55rem;
@@ -285,7 +297,10 @@ body {
   justify-content: center;
   align-items: center; }
 
-.button:link, .button:visited {
+.facebook {
+  width: 50px; }
+
+.button {
   background: none;
   border: 2px solid var(--white);
   border-radius: 2rem;
@@ -293,10 +308,32 @@ body {
   padding: 1.2rem 4rem;
   font-size: 1.8rem;
   color: var(--white);
-  text-decoration: none;
   text-transform: uppercase;
-  transition: .3s all; }
+  transition: .2s all; }
+  .button:hover {
+    background-color: var(--red);
+    border-color: var(--red); }
 
-.button:hover {
-  background-color: var(--red);
-  border-color: var(--red); }
+.scroll-arrow {
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -12px;
+  border-left: 1px solid var(--white);
+  border-bottom: 1px solid var(--white);
+  transform: rotate(-45deg);
+  animation: arrow 1.5s infinite; }
+  .scroll-arrow--2 {
+    bottom: 7.5rem; }
+
+@keyframes arrow {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0; } }
