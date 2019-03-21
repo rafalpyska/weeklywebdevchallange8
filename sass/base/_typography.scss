@@ -1,0 +1,35 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.heading {
+  text-transform: uppercase;
+  color: var(--white);
+  margin: 0;
+  &-primary {
+    font-size: 7.2rem;
+  }
+}
+
+.subheading {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+  font-weight: 100;
+  &:before,
+  &:after {
+    content: '';
+    border-top: 2px solid;
+    margin: 0 20px 0 0;
+    flex-basis: 16.1rem;
+  }
+  &:after {
+    margin: 0 0 0 20px;
+  }
+  &__hero {
+    font-size: 3rem;
+  }
+}

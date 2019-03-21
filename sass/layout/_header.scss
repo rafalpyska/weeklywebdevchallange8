@@ -1,0 +1,69 @@
+.nav {
+  display: flex;
+  height: 8rem;
+  text-transform: uppercase;
+}
+.social {
+  display: flex;
+  align-items: center;
+  flex: 3;
+  padding-left: 21rem;
+  padding-right: 3rem;
+  &__icon {
+    width: 2.4rem;
+    height: 2.1rem;
+    margin: 0 2.5rem;
+    cursor: pointer;
+  }
+}
+.logo {
+  font-size: 2.4rem;
+  margin-right: auto;
+  padding: .65rem 1rem;
+  border: 1px solid var(--red);
+  border-radius: 1.5rem;
+  border-top-right-radius: 0;
+}
+.navigation {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-left: 3rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  background-color: var(--black);
+  &__toggle {
+    position: relative;
+    width: 1.4rem;
+    height: 1.2rem;
+    margin-right: 2.2rem;
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid var(--white);
+    }
+    &:before {
+      top: -.5rem;
+      transform: translateY(10px);
+    }
+    &:after {
+      top: -1.2rem;
+      transform: translateY(23px);
+    }
+  }
+}
+.hero {
+  background: url("../images/hero.jpg");
+  background-size: cover;
+  height: 55rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

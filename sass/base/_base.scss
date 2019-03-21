@@ -187,3 +187,9 @@ template {
 [hidden] {
   display: none;
 }
+
+:root {
+  --white: rgba(255, 255, 255, .9);
+  --black: rgba(0, 0, 0, .9);
+  --red: rgba(243, 71, 57, 1);
+}
