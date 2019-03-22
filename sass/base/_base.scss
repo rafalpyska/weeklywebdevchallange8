@@ -10,6 +10,13 @@ html {
   font-size: 62.5%;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  @include respond(tab-land-big) {
+    font-size: 50.5%;
+  }
+    @include respond(tab-land-small) {
+    font-size: 43.5%;
+  }
+
 }
 
 body {

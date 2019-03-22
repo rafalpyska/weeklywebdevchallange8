@@ -5,10 +5,14 @@
     @if $breakpoint == tab-port {
     @media only screen and (max-width: 26.25em) { @content };
   }
-    @if $breakpoint == tab-land {
+    @if $breakpoint == tab-land-small {
+    @media only screen and (max-width: 64em) { @content };
+  }
+      @if $breakpoint == tab-land-big {
     @media only screen and (max-width: 75em) { @content };
   }
-    @if $breakpoint == big-desktop {
-    @media only screen and (max-width: 112.5em) { @content };
+
+    @if $breakpoint == desktop {
+    @media only screen and (max-width: 100em) { @content };
   }
 }
