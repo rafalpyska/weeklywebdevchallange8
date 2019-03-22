@@ -182,7 +182,8 @@ template {
 :root {
   --white: rgba(255, 255, 255, .9);
   --black: rgba(0, 0, 0, .9);
-  --red: rgba(243, 71, 57, 1); }
+  --red: rgba(243, 71, 57, 1);
+  --orange: rgba(242, 71, 57, 1); }
 
 body {
   font-family: 'Quicksand', sans-serif; }
@@ -193,6 +194,13 @@ body {
   margin: 0; }
   .heading-primary {
     font-size: 7.2rem; }
+  .heading-secondary {
+    font-size: 4.8rem; }
+  .heading-tertiary {
+    font-size: 3.6rem;
+    color: var(--black);
+    font-weight: 300;
+    letter-spacing: 2px; }
 
 .subheading {
   display: flex;
@@ -202,15 +210,48 @@ body {
   text-align: center;
   color: var(--white);
   font-weight: 100; }
-  .subheading:before, .subheading:after {
+  .subheading::before, .subheading::after {
     content: '';
     border-top: 2px solid;
     margin: 0 20px 0 0;
-    flex-basis: 16.1rem; }
-  .subheading:after {
+    flex-basis: 11rem; }
+  .subheading::after {
     margin: 0 0 0 20px; }
   .subheading__hero {
     font-size: 3rem; }
+  .subheading__header {
+    position: relative;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    width: 100%; }
+  .subheading__team {
+    position: relative;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    width: 100%; }
+    .subheading__team::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -1.5rem;
+      width: 50%;
+      height: .2rem;
+      background-color: var(--orange);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      align-self: center;
+      transform: translateX(-50%); }
+
+.paragraph__team {
+  margin-top: 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 300; }
 
 .visuallyhidden {
   border: 0;
@@ -222,6 +263,12 @@ body {
   position: absolute;
   width: 1px;
   white-space: nowrap; }
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
 
 .nav {
   display: flex;
@@ -274,16 +321,16 @@ body {
     border-top: 1px solid var(--white);
     background: transparent;
     cursor: pointer; }
-    .navigation__toggle:before, .navigation__toggle:after {
+    .navigation__toggle::before, .navigation__toggle::after {
       content: '';
       position: absolute;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--white); }
-    .navigation__toggle:before {
+    .navigation__toggle::before {
       top: -.5rem;
       transform: translateY(10px); }
-    .navigation__toggle:after {
+    .navigation__toggle::after {
       top: -1.2rem;
       transform: translateY(23px); }
 
@@ -336,6 +383,80 @@ body {
   .progress__info:last-child {
     font-size: 1.8rem;
     text-transform: uppercase; }
+
+.header__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 5rem; }
+
+.header__team {
+  width: 100%;
+  background: url("../images/sections/section-team.jpg"); }
+
+.section__info {
+  padding: 5rem 29rem;
+  border: 1px solid var(--white); }
+
+.section__content {
+  display: flex;
+  width: 100%;
+  padding: 0 21rem; }
+  .section__content:last-child {
+    padding-bottom: 5rem; }
+
+.member__image-container {
+  width: 50%;
+  position: relative;
+  background-color: #fff; }
+  .member__image-container--first:before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 7%;
+    width: 95%;
+    height: 85%;
+    border: 2px solid var(--white);
+    border-right: 0; }
+  .member__image-container--second:before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 7%;
+    width: 95%;
+    height: 85%;
+    border: 2px solid var(--white);
+    border-left: 0; }
+
+.member__image {
+  width: 100%; }
+
+.member__info {
+  width: 50%;
+  position: relative;
+  padding: 0 11.5rem;
+  text-align: center; }
+  .member__info--second:before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 7%;
+    width: 95%;
+    height: 85%;
+    border: 2px solid var(--black);
+    border-left: 0; }
+  .member__info--first:before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    top: 7%;
+    width: 95%;
+    height: 85%;
+    border: 2px solid var(--black);
+    border-right: 0; }
 
 .button {
   background: none;

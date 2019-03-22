@@ -9,3 +9,10 @@
   width: 1px;
   white-space: nowrap;
 }
+
+.f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -53,19 +53,19 @@
     border-top: 1px solid var(--white);
     background: transparent;
     cursor: pointer;
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
       left: 0;
       width: 100%;
       border-top: 1px solid var(--white);
     }
-    &:before {
+    &::before {
       top: -.5rem;
       transform: translateY(10px);
     }
-    &:after {
+    &::after {
       top: -1.2rem;
       transform: translateY(23px);
     }

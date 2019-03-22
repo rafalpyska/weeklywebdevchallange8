@@ -9,6 +9,15 @@ body {
   &-primary {
     font-size: 7.2rem;
   }
+  &-secondary {
+    font-size: 4.8rem;
+  }
+  &-tertiary {
+    font-size: 3.6rem;
+    color: var(--black);
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
 }
 
 .subheading {
@@ -19,17 +28,56 @@ body {
   text-align: center;
   color: var(--white);
   font-weight: 100;
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     border-top: 2px solid;
     margin: 0 20px 0 0;
-    flex-basis: 16.1rem;
+    flex-basis: 11rem;
   }
-  &:after {
+  &::after {
     margin: 0 0 0 20px;
   }
   &__hero {
     font-size: 3rem;
+  }
+  &__header {
+    position: relative;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  &__team {
+    position: relative;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-bottom: 2rem;
+    width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -1.5rem;
+      width: 50%;
+      height: .2rem;
+      background-color: var(--orange);
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      align-self: center;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.paragraph {
+  &__team {
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 300;
   }
 }
