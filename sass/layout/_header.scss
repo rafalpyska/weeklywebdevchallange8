@@ -87,7 +87,7 @@
       }
     }
     &::after {
-      top: -1.2rem;
+      top: -1rem;
       transform: translateY(21px);
     }
     @include respond(phone) {

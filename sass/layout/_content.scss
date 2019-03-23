@@ -76,6 +76,7 @@
     width: 100%;
     background: url('../images/sections/section-team.jpg');
     margin-bottom: 5rem;
+
   }
   &__portfolio {
     width: 100%;
@@ -165,6 +166,12 @@
   }
   &__image {
     width: 100%;
+    &--first {
+      clip-path: polygon(0% 0%, 0% 100%, 75.06% 100.32%, 97.85% 43.12%, 100.16% 37.55%, 100.16% 60.57%, 94.56% 47.38%, 43.54% 100%, 100% 100%, 100% 0px);
+    }
+    &--second {
+      clip-path: polygon(0% 0%, 0% 100%, 0% 52%, 0px 37%, 4.88% 49%, 0px 59.01%, 0px 64.66%, 0px 100%, 100% 100%, 100% 0%);
+    }
   }
   &__info {
     width: 50%;
@@ -206,6 +213,9 @@
         border: 2px solid var(--black);
         border-bottom: 0;
       }
+    }
+    @include respond(tab-port) {
+      padding: 0 4.5rem;
     }
     @include respond(phone) {
       width: 100%;
@@ -258,9 +268,6 @@
       margin-bottom: 3rem;
     }
     @include respond(tab-land-small) {
-      padding: 2rem;
-    }
-    @include respond(tab-port) {
       padding: 2rem;
     }
     @include respond(phone) {
