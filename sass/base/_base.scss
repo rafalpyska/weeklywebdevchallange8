@@ -16,6 +16,9 @@ html {
     @include respond(tab-land-small) {
     font-size: 43.5%;
   }
+    @include respond(tab-land-port) {
+    font-size: 43.5%;
+  }
 
 }
 

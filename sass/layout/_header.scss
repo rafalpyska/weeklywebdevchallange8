@@ -9,6 +9,14 @@
   flex: 3;
   padding-left: 21rem;
   padding-right: 3rem;
+  @include respond(phone) {
+    padding-left: 1.5rem;
+  }
+  &__item {
+    @include respond(phone) {
+      display: none;
+    }
+  }
   &__icon {
     width: 2.4rem;
     height: 2.1rem;
@@ -44,6 +52,10 @@
   font-size: 1.8rem;
   color: var(--white);
   background-color: var(--black);
+  @include respond(phone) {
+    flex: 0;
+    background-color: var(--white);
+  }
   &__toggle {
     position: relative;
     width: 1.4rem;
@@ -53,6 +65,9 @@
     border-top: 1px solid var(--white);
     background: transparent;
     cursor: pointer;
+    @include respond(phone) {
+      width: 3rem;
+    }
     &::before,
     &::after {
       content: '';
@@ -60,14 +75,28 @@
       left: 0;
       width: 100%;
       border-top: 1px solid var(--white);
+      @include respond(phone) {
+        border-color: var(--black);
+      }
     }
     &::before {
       top: -.5rem;
       transform: translateY(10px);
+      @include respond(phone) {
+        transform: translateY(9px);
+      }
     }
     &::after {
       top: -1.2rem;
-      transform: translateY(23px);
+      transform: translateY(21px);
+    }
+    @include respond(phone) {
+      border-color: var(--black);
+    }
+  }
+  &__info {
+    @include respond(phone) {
+      display: none;
     }
   }
 }

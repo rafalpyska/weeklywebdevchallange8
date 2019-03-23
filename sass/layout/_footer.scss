@@ -5,6 +5,10 @@
   width: 100%;
   background-color: var(--black);
   padding: 0 29rem;
+  @include respond(phone) {
+    padding: 0px 4rem;
+    flex-direction: column;
+  }
   &__info {
     display: flex;
     flex-direction: column;
@@ -12,7 +16,12 @@
     width: 22rem;
     min-height: 20rem;
     padding: 5rem 2rem;
+    @include respond(phone) {
+      width: 100%;
+      padding: 5rem 13rem;
+    }
   }
+
 }
 .copyrights {
   width: 100%;

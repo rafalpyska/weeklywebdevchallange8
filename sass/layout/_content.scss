@@ -2,12 +2,20 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 3.5rem 27rem 0 27rem;
+  padding: 0 25rem 0 25rem;
   font-size: 1.8rem;
+  @include respond(tab-land-big) {
+    padding: 0 18rem 0 18rem;
+  }
+  @include respond(phone) {
+    flex-direction: column;
+    padding: 0 16rem 0 16rem;
+  }
+  @include respond(phone-small) {
+    padding: 0 10rem 0 10rem;
+  }
 }
-@include respond(tab-land-big) {
-  padding: 3.5rem 18rem 0 18rem;
-}
+
 .progress {
   width: 22.1rem;
   height: 22.1rem;
@@ -23,6 +31,14 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    margin: 5rem 0;
+    transition: .2s all;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
   }
   & > .progress__inner {
     position: absolute;
@@ -33,7 +49,10 @@
     display: block;
   }
   &__description {
-    padding: 4rem 0 6rem 0;
+    margin-top: 4rem;
+    @include respond(phone) {
+      margin-top: 2rem;
+    }
   }
   &__info:first-child {
     font-size: 7.2rem;
@@ -76,7 +95,10 @@
     width: 100rem;
     padding: 5rem 10rem;
     border: 1px solid var(--white);
-
+    @include respond(phone) {
+      width: 90%;
+      padding: 5rem;
+    }
   }
   &__content {
     display: flex;
@@ -84,6 +106,10 @@
     padding: 0 21rem;
     &:last-child {
       padding-bottom: 5rem;
+    }
+    @include respond(phone) {
+      flex-direction: column;
+      padding: 0;
     }
   }
 }
@@ -101,6 +127,14 @@
       height: 85%;
       border: 2px solid var(--white);
       border-right: 0;
+      @include respond(phone) {
+        left: 5%;
+        top: 0%;
+        width: 90%;
+        height: 90%;
+        border: 2px solid var(--white);
+        border-top: 0;
+      }
     }
     &--second:before {
       content: '';
@@ -111,6 +145,22 @@
       height: 85%;
       border: 2px solid var(--white);
       border-left: 0;
+      @include respond(phone) {
+        left: 5%;
+        top: 0%;
+        width: 90%;
+        height: 90%;
+        border: 2px solid var(--white);
+        border-top: 0;
+      }
+    }
+    @include respond(phone) {
+      width: 100%;
+    }
+    &:first-child {
+      @include respond(phone) {
+        order: 2;
+      }
     }
   }
   &__image {
@@ -130,6 +180,14 @@
       height: 85%;
       border: 2px solid var(--black);
       border-left: 0;
+      @include respond(phone) {
+        left: 5%;
+        top: 10%;
+        width: 90%;
+        height: 90%;
+        border: 2px solid var(--black);
+        border-bottom: 0;
+      }
     }
     &--first:before {
       content: '';
@@ -140,6 +198,19 @@
       height: 85%;
       border: 2px solid var(--black);
       border-right: 0;
+      @include respond(phone) {
+        left: 5%;
+        top: 10%;
+        width: 90%;
+        height: 90%;
+        border: 2px solid var(--black);
+        border-bottom: 0;
+      }
+    }
+    @include respond(phone) {
+      width: 100%;
+      min-height: 24rem;
+      padding: 6rem;
     }
   }
 }
@@ -159,6 +230,9 @@
     }
     &-container {
       width: 14.28571428%;
+      @include respond(phone) {
+        width: 33.33333333%;
+      }
     }
   }
 }
@@ -167,13 +241,21 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0 21rem;
+    @include respond(phone) {
+      padding: 3rem 3rem;
+    }
   }
   &__image {
     max-width: 100%;
     max-height: 100%;
-    padding: 4rem;
+    margin: 4rem;
+    transition: .2s all;
+    &:hover {
+      transform: scale(1.1);
+    }
     @include respond(tab-land-big) {
       padding: 3rem;
+      margin-bottom: 3rem;
     }
     @include respond(tab-land-small) {
       padding: 2rem;
@@ -181,9 +263,17 @@
     @include respond(tab-port) {
       padding: 2rem;
     }
+    @include respond(phone) {
+      padding: 2rem;
+    }
 
     &-container {
+      display: flex;
+      justify-content: center;
       width: 14.28571428%;
+      @include respond(phone) {
+        width: 33.33333333%;
+      }
     }
   }
 }
