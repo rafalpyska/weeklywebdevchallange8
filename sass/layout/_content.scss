@@ -277,7 +277,9 @@
       padding: 2rem;
     }
     @include respond(phone) {
-      padding: 2rem;
+      padding: 0;
+      max-width: 40%;
+      max-height: 40%;
     }
 
     &-container {

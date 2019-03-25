@@ -673,7 +673,9 @@ body {
       padding: 2rem; } }
   @media only screen and (max-width: 43.75em) {
     .brands__image {
-      padding: 2rem; } }
+      padding: 0;
+      max-width: 40%;
+      max-height: 40%; } }
   .brands__image-container {
     display: flex;
     justify-content: center;
