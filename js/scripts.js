@@ -28,8 +28,39 @@ let monthsProgress = new ProgressBar.Circle(months, {
     svgStyle: null
 });
 
+function smoothScroll(target, duration) {
+    target = document.querySelector(target);
+    let targetPosition = target.getBoundingClientRect().top;
+    let startPosition = window.pageYOffset;
+    let distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function scrollAnimation(currentTime) {
+        if(startTime === null) {
+            startTime = currentTime;
+        }
+        let timeElapsed = currentTime - startTime;
+        let run = ease(timeElapsed, startPosition, targetPosition, duration);
+        window.scrollTo(0, run);
+        if(timeElapsed < duration) {
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    requestAnimationFrame(scrollAnimation);
+}
+
 
 projectsProgress.animate(0.5);
 clientsProgress.animate(0.35);
 monthsProgress.animate(0.80);
 
+let scrollDown = document.querySelector('.scroll-down');
+scrollDown.addEventListener('click', function() {
+   smoothScroll('.accomplishments', 1000);
+});
