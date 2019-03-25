@@ -28,6 +28,21 @@ let monthsProgress = new ProgressBar.Circle(months, {
     svgStyle: null
 });
 
+(function() {
+    let nav = document.querySelector(".navigation__expanded");
+    let navigation__toggle = document.querySelector(".navigation__toggle");
+    let nav__list = document.querySelector(".nav__list");
+
+    navigation__toggle,addEventListener("click", function () {
+        nav.classList.toggle("navigation__expanded--visible");
+        if(nav__list.classList.contains("nnavigation__expanded--visible")) {
+            nav__list.setAttribute('aria-expanded', true);
+       } else {
+            nav__list.setAttribute("aria-expanded", false);
+        }
+    }, false);
+}());
+
 function smoothScroll(target, duration) {
     target = document.querySelector(target);
     let targetPosition = target.getBoundingClientRect().top;
@@ -62,5 +77,5 @@ monthsProgress.animate(0.80);
 
 let scrollDown = document.querySelector('.scroll-down');
 scrollDown.addEventListener('click', function() {
-   smoothScroll('.accomplishments', 1000);
+    smoothScroll('.accomplishments', 1000);
 });

@@ -322,17 +322,11 @@ body {
   align-items: center;
   flex-direction: column; }
 
-.nav {
-  display: flex;
-  height: 8rem;
-  text-transform: uppercase; }
-
 .social {
   display: flex;
   align-items: center;
   flex: 3;
-  padding-left: 21rem;
-  padding-right: 3rem; }
+  padding: 3rem 3rem 3rem 21rem; }
   @media only screen and (max-width: 43.75em) {
     .social {
       padding-left: 1.5rem; } }
@@ -362,10 +356,43 @@ body {
     color: var(--white);
     background-color: var(--red); }
 
+.hero {
+  position: relative;
+  background: url("../images/hero.jpg");
+  background-size: cover;
+  height: 55rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.facebook {
+  width: 50px; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase; }
+  .nav__list {
+    display: flex; }
+    @media only screen and (max-width: 43.75em) {
+      .nav__list {
+        flex-direction: column; } }
+  .nav__item {
+    list-style-type: none;
+    width: 100%;
+    padding: 2rem; }
+  .nav__link:link, .nav__link:visited {
+    color: var(--white);
+    transition: .3s all; }
+  .nav__link:hover {
+    color: var(--red); }
+
 .navigation {
   display: flex;
   flex: 1;
   align-items: center;
+  flex-wrap: wrap;
   padding-left: 3rem;
   font-size: 1.8rem;
   color: var(--white);
@@ -410,19 +437,19 @@ body {
   @media only screen and (max-width: 43.75em) {
     .navigation__info {
       display: none; } }
-
-.hero {
-  position: relative;
-  background: url("../images/hero.jpg");
-  background-size: cover;
-  height: 55rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.facebook {
-  width: 50px; }
+  .navigation__expanded {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    width: 100%;
+    max-height: 0;
+    font-size: 1.8rem;
+    background: var(--black);
+    transition: .3s all; }
+    .navigation__expanded--visible {
+      visibility: initial;
+      max-height: 25rem;
+      transition: .3s all; }
 
 .accomplishments {
   display: flex;
@@ -652,7 +679,7 @@ body {
 .brands__list {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 21rem; }
+  padding: 8rem 21rem; }
   @media only screen and (max-width: 43.75em) {
     .brands__list {
       padding: 3rem 3rem; } }

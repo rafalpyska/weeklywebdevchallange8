@@ -1,0 +1,96 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  &__list {
+    display: flex;
+    @include respond(phone) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    list-style-type: none;
+    width: 100%;
+    padding: 2rem;
+  }
+  &__link:link,
+  &__link:visited {
+    color: var(--white);
+    transition: .3s all;
+  }
+  &__link:hover {
+    color: var(--red);
+  }
+}
+.navigation {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 3rem;
+  font-size: 1.8rem;
+  color: var(--white);
+  background-color: var(--black);
+  @include respond(phone) {
+    flex: 0;
+    background-color: var(--white);
+  }
+  &__toggle {
+    position: relative;
+    width: 1.4rem;
+    height: 1.2rem;
+    margin-right: 2.2rem;
+    border: 0;
+    border-top: 1px solid var(--white);
+    background: transparent;
+    cursor: pointer;
+    @include respond(phone) {
+      width: 3rem;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid var(--white);
+      @include respond(phone) {
+        border-color: var(--black);
+      }
+    }
+    &::before {
+      top: -.5rem;
+      transform: translateY(10px);
+      @include respond(phone) {
+        transform: translateY(9px);
+      }
+    }
+    &::after {
+      top: -1rem;
+      transform: translateY(21px);
+    }
+    @include respond(phone) {
+      border-color: var(--black);
+    }
+  }
+  &__info {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+  &__expanded {
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    width: 100%;
+    max-height: 0;
+    font-size: 1.8rem;
+    background: var(--black);
+    transition: .3s all;
+    &--visible {
+      visibility: initial;
+      max-height: 25rem;
+      transition: .3s all;
+    }
+  }
+}

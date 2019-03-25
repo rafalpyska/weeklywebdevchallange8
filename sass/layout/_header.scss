@@ -1,14 +1,8 @@
-.nav {
-  display: flex;
-  height: 8rem;
-  text-transform: uppercase;
-}
 .social {
   display: flex;
   align-items: center;
   flex: 3;
-  padding-left: 21rem;
-  padding-right: 3rem;
+  padding: 3rem 3rem 3rem 21rem;
   @include respond(phone) {
     padding-left: 1.5rem;
   }
@@ -42,62 +36,6 @@
   &:hover {
     color: var(--white);
     background-color: var(--red);
-  }
-}
-.navigation {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  padding-left: 3rem;
-  font-size: 1.8rem;
-  color: var(--white);
-  background-color: var(--black);
-  @include respond(phone) {
-    flex: 0;
-    background-color: var(--white);
-  }
-  &__toggle {
-    position: relative;
-    width: 1.4rem;
-    height: 1.2rem;
-    margin-right: 2.2rem;
-    border: 0;
-    border-top: 1px solid var(--white);
-    background: transparent;
-    cursor: pointer;
-    @include respond(phone) {
-      width: 3rem;
-    }
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 100%;
-      border-top: 1px solid var(--white);
-      @include respond(phone) {
-        border-color: var(--black);
-      }
-    }
-    &::before {
-      top: -.5rem;
-      transform: translateY(10px);
-      @include respond(phone) {
-        transform: translateY(9px);
-      }
-    }
-    &::after {
-      top: -1rem;
-      transform: translateY(21px);
-    }
-    @include respond(phone) {
-      border-color: var(--black);
-    }
-  }
-  &__info {
-    @include respond(phone) {
-      display: none;
-    }
   }
 }
 .hero {

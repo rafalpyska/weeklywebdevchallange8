@@ -256,7 +256,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 21rem;
+    padding: 8rem 21rem;
     @include respond(phone) {
       padding: 3rem 3rem;
     }
